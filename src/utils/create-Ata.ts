@@ -10,8 +10,8 @@ export async function buildCreateATA({
 }) {
   const getATA = await token.getAssociatedTokenAddress(mint, payer);
 
-  const transtion = new web3.Transaction().add(
-    token.createAssociatedTokenAccountInstruction(payer, getATA, payer, mint),
+  const transactions = new web3.Transaction().add(
+    token.createAssociatedTokenAccountInstruction(payer, getATA, payer, mint)
   );
-  return { transtion, getATA };
+  return { transactions, getATA };
 }

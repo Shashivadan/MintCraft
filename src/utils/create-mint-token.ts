@@ -16,7 +16,7 @@ export const createMintToken = async (
   connection: Connection,
   decimal: number,
   publicKey: PublicKey,
-  feeAuthertiy: PublicKey | null,
+  feeAuthertiy: PublicKey | null
 ) => {
   const lamports = await getMinimumBalanceForRentExemptMint(connection);
   const mintAcc = Keypair.generate();
@@ -33,8 +33,8 @@ export const createMintToken = async (
       mintAcc.publicKey,
       decimal,
       publicKey,
-      feeAuthertiy,
-    ),
+      feeAuthertiy
+    )
   );
 
   return { transaction, mintAcc };
